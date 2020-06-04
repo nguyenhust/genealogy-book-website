@@ -1,0 +1,50 @@
+.multiselect-wrap {
+    width: 160px;
+    height: 30px;
+    display: block;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.multiselect-selected {
+    display: block;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    z-index: 0;
+}
+.multiselect-list {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    right: 0px;
+    background: #eee;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 1;
+}
+
+.multiselect-list div {
+    padding: 7px 5px;
+    font-size: 13px;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.multiselect-list div:hover,
+.multiselect-list div.selected-option {
+    background: #ccc;
+    height: 50%;
+}
+.multiselect-selected span {
+    padding: 5px;
+    background: #eee;
+    margin: 2px 4px;
+    display: inline-block;
+    font-size: 12px;
+}
