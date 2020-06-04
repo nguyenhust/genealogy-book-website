@@ -219,6 +219,7 @@ margin-left: 5px;width: 80px; height: 30px; color: white;');
      //   lq++;
         for (var i = 0; i < human[chiso][6].length; i++) {
             var vt = human[chiso][6][i];
+            if(human[vt] != null){
             if(human[chiso][2] == 0){
                 if(human[vt][4] == null && vt != 0){
                   //  lq+= 2;  
@@ -227,7 +228,7 @@ margin-left: 5px;width: 80px; height: 30px; color: white;');
                 if(human[vt][3] == null && vt != 0){
                 //    lq+= 2;
                 }
-            }
+            }}
         }
     }
  //   console.log(human[chiso][1] + '-' + lq);
@@ -1090,10 +1091,11 @@ function DeQuy(tu, list){
     if (list[tu][2] == 1 && list[tu][5].length > 0 && list[tu][6].length > 0) {
         for (var i = 0; i < list[tu][6].length; i++) {
             var vt = list[tu][6][i];
+            if(list[vt] != null){
             if(list[list[vt][3]] == null){
                 ConKoBo = 1;
                 break;
-            }
+            }}
         }
     }
 
