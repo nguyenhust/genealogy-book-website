@@ -1,6 +1,6 @@
-1. Cai Xampp.
-2. Copy folder "2Giapha" => o cai Xampp => folder "htdocs".
-3. Chay Xampp bang cach run "xampp-control.exe" trong o cai, start Apache va MySQL.
-3. Mo trinh duyet, go: "http://localhost/phpmyadmin/", vao import chon file "Database_Gia_pha.sql"
-, roi Go.
-4. Mo tab khac, go: "http://localhost/2Giapha/login.php". OK
+1. Cài Xampp.
+2. Copy folder "2Giapha" => ổ chứa Xampp => folder "htdocs".
+3. Chạy Xampp bằng cách run "xampp-control.exe" trong ổ cài, start Apache va MySQL.
+3. Mở trình duyệt, go: "http://localhost/phpmyadmin/", vào import chon file "Database_Gia_pha.sql"
+, rồi Go.
+4. Mở tab khác, go: "http://localhost/2Giapha/login.php". OK.
