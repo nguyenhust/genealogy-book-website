@@ -2,8 +2,7 @@
 Xây dựng Website "Gia pha online".
 Môn "Các phương pháp phát triển phần mềm nhanh".
 
-SV: Nguyễn Tuấn Hưng
-    Hoàng Đức Khôi Nguyên.
+SV: Nguyễn Tuấn Hưng, Hoàng Đức Khôi Nguyên.
 
 How to run:
 1. Cài Xampp.
