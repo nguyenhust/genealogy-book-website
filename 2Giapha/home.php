@@ -50,7 +50,7 @@ if(!empty($_POST['logout'])){
 
 <html>
      <head>
-    <title>Gia pha online</title>
+    <title>Trang chủ</title>
     <style type="text/css">
         *{
     margin:0;
@@ -168,21 +168,24 @@ body{
     </head>
     <body>
         <div style="top:0; width: 100%; height: 50px;">
-                <h1>Gia pha online</h1>
+                <h1>Gia phả online</h1>
             </div>
         <div class="wrap">
             <div class="left">
                 <div class="thongtin" id="doiMK">
-                    <h3>Thay doi thong tin tai khoan</h3>
+                    <h3>Thay đổi thông tin tài khoản</h3>
                 </div>
                 <div class="caygiapha" id="danhsachcay">
-                    <h3>Danh sach cay gia pha</h3>
+                    <h3>Danh sách cây gia phả</h3>
                 </div>
                 <div class="themcaygiapha" id="ThemCay">
-                    <h3>Tao cay gia pha</h3>
+                    <h3>Tạo cây gia phả</h3>
+                </div>
+                <div class="themcaygiapha" id="BaiCung">
+                    <h3>Bài cúng</h3>
                 </div>
                 <div class="dangxuat" id="dangxuat">
-                    <h3>Dang xuat</h3>
+                    <h3>Đăng xuất</h3>
                 </div>
             </div>
             <div class="right" id="right">

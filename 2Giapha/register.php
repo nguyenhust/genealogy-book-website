@@ -12,7 +12,7 @@ if(isset($_POST['do-register'])){
 ?>
 <html>
     <head>
-    <title>Register to Gia pha online</title>
+    <title>Đăng kí Gia phả online</title>
     <style type="text/css">
         *{
     margin:0;
@@ -73,24 +73,24 @@ body{
     </head>
     <body>
         <div style="top:0; width: 100%; height: 50px;">
-                <h1>Gia pha online</h1>
+                <h1>Gia phả online</h1>
             </div>
         <div class="wrap">
         <form class="login-form" action="register.php" method="POST">
             <div class="form-header">
-                <h3>Dang ki</h3>
+                <h3>Đăng kí</h3>
             </div>
             <!--Email Input-->
             <div class="form-group">
-                <input type="text" name="tenDK" class="form-input" placeholder="nhap ten dang nhap...">
+                <input type="text" name="tenDK" class="form-input" placeholder="nhập tên đăng kí...">
             </div>
             <!--Password Input-->
             <div class="form-group">
-                <input type="text" name="passDK" class="form-input" placeholder="nhap mat khau...">
+                <input type="text" name="passDK" class="form-input" placeholder="nhập mật khẩu...">
             </div>
             <!--Login Button-->
             <div class="form-group">
-                <input class="form-button" name="do-register" type="submit" value="Dang ki">
+                <input class="form-button" name="do-register" type="submit" value="Đăng kí">
             </div>
         </form>
         </div>

@@ -10,14 +10,14 @@ function ShowForm() {
     form.setAttribute('style', 'width: 350px; align-items: center;border: 1px solid #ddd;padding: 2rem;background: #ffffff;');
     
     var pp = document.createElement('h3');
-    pp.appendChild(document.createTextNode('Dien thong tin'));
+    pp.appendChild(document.createTextNode('Điền thông tin'));
     form.appendChild(pp);
     pp.setAttribute('style',' text-align: center;');
     form.innerHTML += '</br>';
     
     var tenMoi = document.createElement('input');
     tenMoi.setAttribute('type', 'text');
-    tenMoi.placeholder = ' new name...';
+    tenMoi.placeholder = ' tên mới...';
     tenMoi.name = 'tenMoi';
     form.appendChild(tenMoi);
     tenMoi.setAttribute('style', 'background: #fafafa;border: 1px solid #eeeeee;margin-top: 10px; margin-left: 5px;\n\
@@ -26,7 +26,7 @@ function ShowForm() {
     
     var mkMoi = document.createElement('input');
     mkMoi.setAttribute('type', 'text');
-    mkMoi.placeholder = ' new password...';
+    mkMoi.placeholder = ' mật khẩu mới...';
     mkMoi.name = 'mkMoi';
     form.appendChild(mkMoi);
     mkMoi.setAttribute('style', 'background: #fafafa;border: 1px solid #eeeeee;margin-top: 10px; margin-left: 5px;\n\
@@ -35,7 +35,7 @@ function ShowForm() {
     
     var doiMK = document.createElement('input');
     doiMK.setAttribute('type', 'submit');
-    doiMK.value = 'Xac nhan';
+    doiMK.value = 'Xác nhận';
     doiMK.name = 'do-changeTenMK';
     form.appendChild(doiMK);
     doiMK.setAttribute('style', 'background: #69d2e7;border: 1px solid #ddd;color: #ffffff;margin-top: 20px; margin-left: 5px;width: 100%; height: 30px;text-transform: uppercase;');
@@ -43,7 +43,7 @@ function ShowForm() {
     
     var Huydi = document.createElement('input');
     Huydi.setAttribute('type', 'button');
-    Huydi.value = 'Huy';
+    Huydi.value = 'Hủy';
     Huydi.id = 'Cancel';
     form.appendChild(Huydi);
     Huydi.setAttribute('style', 'background: #69d2e7;border: 1px solid #ddd;color: #ffffff;margin-top: 20px; margin-left: 25%;width: 50%; height: 30px;text-transform: uppercase;');
@@ -98,7 +98,7 @@ function DanhsachCay(danhsach){
         tenCay.value = danhsach[i][2];
         tenCay.class = danhsach[i][1];
         tenCay.name = 'tenCayMoi';
-        tenCay.placeholder = 'doi ten...';
+        tenCay.placeholder = 'đổi tên...';
         tenCay.id = danhsach[i][1] + '_' + danhsach[i][2];
         divv.appendChild(tenCay);
         tenCay.setAttribute('style', 'background: #fafafa;border: 1px solid #eeeeee;margin-top: 5px; margin-left: 15px;\n\
@@ -116,7 +116,7 @@ margin-top: 5px; margin-left: 15px; margin-bottom: 10px;width: 10%; height: 30px
         
         var butn2 = document.createElement('input');
         butn2.setAttribute('type', 'button');
-        butn2.value = 'Doi ten';
+        butn2.value = 'Đổi tên';
         butn2.name = danhsach[i][2];
         butn2.id = 'Doiten';
         divv.appendChild(butn2);
@@ -125,7 +125,7 @@ margin-top: 5px; margin-left: 15px; margin-bottom: 10px; height: 30px;text-trans
         
         var butn3 = document.createElement('input');
         butn3.setAttribute('type', 'button');
-        butn3.value = 'Xoa';
+        butn3.value = 'Xoá';
         butn3.name = danhsach[i][2];
         butn3.id = 'Xoa';
         divv.appendChild(butn3);
@@ -193,14 +193,14 @@ function FormTaoCay(){
     form.setAttribute('style', 'width: 350px; align-items: center;border: 1px solid #ddd;padding: 2rem;background: #ffffff;');
     
     var pp = document.createElement('h3');
-    pp.appendChild(document.createTextNode('Them cay gia pha'));
+    pp.appendChild(document.createTextNode('Thêm cây gia phả'));
     form.appendChild(pp);
     pp.setAttribute('style',' text-align: center;');
     form.innerHTML += '</br>';
     
     var tenMoi = document.createElement('input');
     tenMoi.setAttribute('type', 'text');
-    tenMoi.placeholder = ' new tree...';
+    tenMoi.placeholder = ' tên...';
     tenMoi.name = 'tenCayMoi';
     form.appendChild(tenMoi);
     tenMoi.setAttribute('style', 'background: #fafafa;border: 1px solid #eeeeee;margin-top: 10px; margin-left: 5px;\n\
@@ -209,7 +209,7 @@ function FormTaoCay(){
     
     var doiMK = document.createElement('input');
     doiMK.setAttribute('type', 'submit');
-    doiMK.value = 'Them';
+    doiMK.value = 'Thêm';
     doiMK.name = 'them_cay';
     form.appendChild(doiMK);
     doiMK.setAttribute('style', 'background: #69d2e7;border: 1px solid #ddd;color: #ffffff;margin-top: 20px; margin-left: 5px;width: 100%; height: 30px;text-transform: uppercase;');
@@ -217,7 +217,7 @@ function FormTaoCay(){
     
     var Huydi = document.createElement('input');
     Huydi.setAttribute('type', 'button');
-    Huydi.value = 'Huy';
+    Huydi.value = 'Hủy';
     Huydi.id = 'Cancel';
     form.appendChild(Huydi);
     Huydi.setAttribute('style', 'background: #69d2e7;border: 1px solid #ddd;color: #ffffff;margin-top: 20px; margin-left: 25%;width: 50%; height: 30px;text-transform: uppercase;');
@@ -228,6 +228,16 @@ function FormTaoCay(){
 
 $(document).on('click', "#ThemCay", function () {
     FormTaoCay();
+});
+
+function ListBaiCung(){
+  DoiTT.innerHTML = "";
+    
+  DoiTT.innerHTML='<iframe src="./Bai_cung.html" width = "800" height="800"/>';
+}
+
+$(document).on('click', "#BaiCung", function () {
+    ListBaiCung();
 });
 
 $('#dangxuat').on('click', function() {

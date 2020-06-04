@@ -24,6 +24,8 @@ function LuuCay(){
     $conn = mysqli_connect('localhost', 'root', '', 'gia_pha') or die ('Loi ket noi');
     mysqli_set_charset($conn, "utf8");
     
+    $cay_data = $conn -> real_escape_string($cay_data);
+    
     $sql = "Update user_family set family_data = '$cay_data' where user_id = '$curr_id' and family = '$TenCay'";
           
     if (mysqli_query($conn, $sql)){

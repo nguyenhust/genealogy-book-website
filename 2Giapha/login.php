@@ -13,7 +13,7 @@ if(isset($_POST['do-login'])){
 ?>
 <html>
     <head>
-    <title>Login to Gia pha online</title>
+    <title>Đăng nhập Gia phả online</title>
     <style type="text/css">
         *{
     margin:0;
@@ -76,27 +76,27 @@ body{
     </head>
     <body>
         <div style="top:0; width: 100%; height: 50px;">
-                <h1>Gia pha online</h1>
+                <h1>Gia phả online</h1>
             </div>
         <div class="wrap">
         <form class="login-form" action="login.php" method="POST">
             <div class="form-header">
-                <h3>Dang nhap</h3>
+                <h3>Đăng nhập</h3>
             </div>
             <!--Email Input-->
             <div class="form-group">
-                <input type="text" name="tenDN" class="form-input" placeholder="ten dang nhap...">
+                <input type="text" name="tenDN" class="form-input" placeholder="tên đăng nhập...">
             </div>
             <!--Password Input-->
             <div class="form-group">
-                <input type="password" name="passDN" class="form-input" placeholder="mat khau...">
+                <input type="password" name="passDN" class="form-input" placeholder="mật khẩu...">
             </div>
             <!--Login Button-->
             <div class="form-group">
-                <input class="form-button" name="do-login" type="submit" value="Dang nhap">
+                <input class="form-button" name="do-login" type="submit" value="Đăng nhập">
             </div>
             <div class="form-footer">
-            Neu chua co tai khoan hay <a href="/2Giapha/register.php">dang ki</a>
+            Nếu chưa có tài khoản hãy <a href="/2Giapha/register.php">đăng kí</a>
             </div>
         </form>
         </div>

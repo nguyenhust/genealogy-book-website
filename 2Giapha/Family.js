@@ -82,7 +82,7 @@ function ShowEdit(chiso){
     var div1 = document.createElement('div');
     div1.setAttribute('style', 'width: 100%; margin-top: 10px; margin-left: 15px;');
     var pp1 = document.createElement('label');
-    pp1.appendChild(document.createTextNode('Ten: '));
+    pp1.appendChild(document.createTextNode('Tên: '));
     div1.appendChild(pp1);
     pp1.setAttribute('style','font-size: 15px;');
     
@@ -100,7 +100,7 @@ function ShowEdit(chiso){
     var div2 = document.createElement('div');
     div2.setAttribute('style', 'width: 100%; margin-top: 10px; margin-left: 15px;');
     var pp2 = document.createElement('label');
-    pp2.appendChild(document.createTextNode('Gioi tinh: '));
+    pp2.appendChild(document.createTextNode('Giới tính: '));
     div2.appendChild(pp2);
     pp2.setAttribute('style','font-size: 15px;');
     
@@ -118,7 +118,7 @@ function ShowEdit(chiso){
         var op1 = document.createElement('option');
         op1.value = 1;
         op1.setAttribute('selected', 'true');
-        op1.appendChild(document.createTextNode('Nu'));
+        op1.appendChild(document.createTextNode('Nữ'));
         gioitinh.appendChild(op1);
     }}
     else{
@@ -127,7 +127,7 @@ function ShowEdit(chiso){
         op.appendChild(document.createTextNode('Nam'));
         var op1 = document.createElement('option');
         op1.value = 1;
-        op1.appendChild(document.createTextNode('Nu'));
+        op1.appendChild(document.createTextNode('Nữ'));
         gioitinh.appendChild(op);
         gioitinh.appendChild(op1);
         for (var i = 0; i < gioitinh.options.length; i++) {
@@ -145,7 +145,7 @@ function ShowEdit(chiso){
     var div3 = document.createElement('div');
     div3.setAttribute('style', 'width: 100%; margin-top: 10px; margin-left: 15px;');
     var pp3 = document.createElement('label');
-    pp3.appendChild(document.createTextNode('Nam sinh: '));
+    pp3.appendChild(document.createTextNode('Năm sinh: '));
     div3.appendChild(pp3);
     pp3.setAttribute('style','font-size: 15px;');
     
@@ -162,7 +162,7 @@ function ShowEdit(chiso){
     var div4 = document.createElement('div');
     div4.setAttribute('style', 'width: 100%; margin-top: 10px; margin-left: 15px;');
     var pp4 = document.createElement('label');
-    pp4.appendChild(document.createTextNode('Nam mat: '));
+    pp4.appendChild(document.createTextNode('Năm mất: '));
     div4.appendChild(pp4);
     pp4.setAttribute('style','font-size: 15px;');
     
@@ -179,14 +179,14 @@ function ShowEdit(chiso){
     var div5 = document.createElement('div');
     div5.setAttribute('style', 'width: 100%; margin-top: 10px; margin-left: 15px;');
     var pp5 = document.createElement('label');
-    pp5.appendChild(document.createTextNode('Mieu ta: '));
+    pp5.appendChild(document.createTextNode('Miêu tả: '));
     div5.appendChild(pp5);
     pp5.setAttribute('style','font-size: 15px;');
     
     var mt = document.createElement('textarea');
     mt.id = 'mieuta';
-    mt.placeholder = 'Viet mieu ta...';
-    mt.setAttribute('text', human[chiso][9]);
+    mt.placeholder = 'Viết miêu tả...';
+    mt.innerText = "" + human[chiso][9];
     div5.appendChild(mt);
     mt.setAttribute('style', 'background: #fafafa;border: 1px solid #eeeeee; margin-left: 5px;\n\
     width: 60%; height: 50px;');

@@ -19,7 +19,7 @@ if(!empty($_POST['tree_data'])){
 
 ?>
 <html>
-    <title>Gia pha online</title>
+    <title>Gia phả online</title>
     <style type="text/css">
         *{
     margin:0;
@@ -119,15 +119,15 @@ body{
     <body>
         
         <div style="top:0; width: 100%; height: 50px;">
-                <h1>Gia pha online</h1>
+                <h1>Gia phả online</h1>
             </div>
         <div class="wrap">
             <div class="left">
                 <div class="Chitiet" id="Chitiet">
-                    <h3>Chi tiet</h3>
+                    <h3>Chi tiết</h3>
                 </div>
                 <div class="Luu_cay" id="Luu_cay">
-                    <h3>Luu cay</h3>
+                    <h3>Lưu</h3>
                 </div>
                 <div class="nguoi" id="nguoi">
                     
