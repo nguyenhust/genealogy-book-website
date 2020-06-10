@@ -751,6 +751,7 @@ function XemQH(man1, man2, qh, cuoiK){
     divv.appendChild(btn3);
     btn3.setAttribute('style', 'background: blue;border-radius: 2px 2px 2px 2px;margin-top: 10px; \n\
 margin-left: 40%;width: 50px; height: 30px; color: white;');
+    divv.innerHTML += '</br>';
     
     nguoi.appendChild(divv);
 }
@@ -1111,12 +1112,23 @@ function DeQuy(tu, list){
     var span = document.createElement('span');
     span.id = 'Edit';
     span.setAttribute('name', list[tu][0]);
-    var mau = 'red';
+    var mau = 'blue';
     if(list[tu][2] != 0){
-        mau = 'blue';
+        mau = 'red';
     }
     span.setAttribute('style', 'background: '+ mau +'; align-items: center; text-align: center;\n\
-display: inline-block;height: 50px; width: 90px;color:white;');
+display: inline-block;height: 100px; width: 90px;color:white;');
+    
+    var ava = document.createElement('img');
+    if(list[tu][2] == 0){
+       ava.setAttribute('src', 'image/Nam.png');
+    } else{
+       ava.setAttribute('src', 'image/Nu.png');
+    }
+    ava.setAttribute('style', 'width: 60px; height:60px;');
+    span.appendChild(ava);
+    span.innerHTML +='</br>';
+    
     span.appendChild(document.createTextNode(list[tu][1]));
     
     div.appendChild(span);
@@ -1137,8 +1149,15 @@ display: inline-block;height: 50px; width: 90px;color:white;');
             var spann = document.createElement('span');
             spann.id = 'Edit';
             spann.setAttribute('name', list[vt][0]);
-            spann.setAttribute('style', 'background: blue; margin-left: 5px; align-items: center; text-align: center;\n\
-display: inline-block;height: 50px; width: 90px;color:white;');
+            spann.setAttribute('style', 'background: red; margin-left: 5px; align-items: center; text-align: center;\n\
+display: inline-block;height: 100px; width: 90px;color:white;');
+            
+            var ava2 = document.createElement('img');
+            ava2.setAttribute('src', 'image/Nu.png');
+            ava2.setAttribute('style', 'width: 60px; height:60px;');
+            spann.appendChild(ava2);
+            spann.innerHTML +='</br>';
+            
             spann.appendChild(document.createTextNode(list[vt][1]));
             div.appendChild(spann);
          //   partner.push(vt);
@@ -1264,12 +1283,15 @@ display: inline-block;height: 50px; width: 90px;color:white;');
     }
     }
     }
-    
-    
 }
 
 function HienThiHuman(list){
     chart.innerHTML = '';
+    var tenCC = document.getElementById("familyHead").textContent;
+    
+    var hh = document.createElement('h3');
+    hh.appendChild(document.createTextNode('[' + tenCC + ']'));
+    chart.appendChild(hh);
     
     for (var i = 0; i < list.length; i++) {
         if(list[i] != null && !DaXet.includes(parseInt(i))){
@@ -1288,7 +1310,7 @@ function HienThiHuman(list){
                 var kk = (chieudai - 90 - (90+5)*(allSpan.length - 1))/2 + 45 + (90 + 5)*j;
                 
         div1.setAttribute('style', 'content:""; position:absolute; top:20px; left:'+ kk +'px;\n\
- border-top: 1px solid #000000; width: 95px; z-index: -1;');
+ border-top: 2px solid #000000; width: 95px; z-index: -1;');
         allSpan[j].append(div1);
             }
             
@@ -1313,8 +1335,8 @@ function HienThiHuman(list){
                 
             } 
             div.setAttribute('style', 'content:""; position:absolute; top:-40px; left:'+kc+'px;\n\
- border-'+lef+': 1px solid #000000; height: 40px; z-index: -1;\n\
- border-top: 1px solid #000000; width: '+ cd +'px;\n\
+ border-'+lef+': 2px solid #000000; height: 40px; z-index: -1;\n\
+ border-top: 2px solid #000000; width: '+ cd +'px;\n\
 border-'+righ+': 0px;');
         /*    console.log('' + cd + '-' +allDiv[i].parentElement.parentElement.offsetWidth/2 + '-'+kc 
             + '-' + ofse); */
@@ -1329,7 +1351,7 @@ border-'+righ+': 0px;');
         
         var div1 = document.createElement('hr');
         div1.setAttribute('style', 'content:""; position:absolute; top:20px; left:50%;\n\
- border-left: 1px solid #000000; height: 40px; z-index: -1;');
+ border-left: 2px solid #000000; height: 90px; z-index: -1;');
         allUl[i].append(div1);
         }
     }
@@ -1354,6 +1376,9 @@ $('#Luu_cay').on('click', function() {
     });
 });
 
+$('#veHome').on('click', function (){
+   window.location = "home.php"; 
+});
 
 var scaleChart = 1;
 $('#zoomOut').on('click', function(){
@@ -1369,3 +1394,26 @@ $('#zoomIn').on('click', function(){
         scaleChart += 0.2;
     }
 });
+
+function DoCapture(){
+    var elm = $('#Bigchart').get(0);
+ 
+    var tenCC = document.getElementById("familyHead").textContent;
+    tenCC = tenCC.replace(/\s/g, '');
+    var filename = tenCC+ ".png";
+    
+    html2canvas(elm).then(function (canvas){
+        var canWidth = canvas.width;
+        var canHeight = canvas.height;
+        
+        Canvas2Image.saveAsPNG(canvas);
+    }); 
+};
+
+$('#ConvertImage').on('click', function(){
+    DoCapture(); 
+});
+  
+
+
+ 

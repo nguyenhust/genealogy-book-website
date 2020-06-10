@@ -4,6 +4,8 @@ function ShowForm() {
    
    DoiTT.innerHTML = '';
    
+   DoiTT.innerHTML += "<h3>Thay đổi thông tin</h3></br>";
+   
     var form = document.createElement('form');
     form.action = 'home.php';
     form.method = 'POST';
@@ -81,12 +83,21 @@ $('#danhsachcay').on('click', function() {
 
 function DanhsachCay(danhsach){
     DoiTT.innerHTML = '';
+    DoiTT.innerHTML += "<h3>Danh sách gia phả</h3>";
+    
+    var Huydi = document.createElement('input');
+    Huydi.setAttribute('type', 'button');
+    Huydi.value = 'Đóng';
+    Huydi.id = 'Cancel';
+    DoiTT.appendChild(Huydi);
+    Huydi.setAttribute('style', 'background: #69d2e7;border: 1px solid #ddd;color: #ffffff\n\
+;width: 60px; height: 30px;text-transform: uppercase;float:right;');
     
     for (var i = 0; i < danhsach.length; i++) {
         var divv = document.createElement('div');
         divv.name = danhsach[i][1];
         tenNguoi = danhsach[i][1];
-        divv.setAttribute('style', 'width: 500px ;border: 1px solid #ddd; border-radius: 8px 8px 8px 8px;background: #ffffff;');
+        divv.setAttribute('style', 'margin-top: 20px; width: 500px ;border: 1px solid #ddd; border-radius: 8px 8px 8px 8px;background: #ffffff;');
         
         var pp = document.createElement('h3');
         pp.appendChild(document.createTextNode(danhsach[i][2]));
@@ -186,6 +197,7 @@ $(document).on('click', "#Xem", function () {
 
 function FormTaoCay(){
     DoiTT.innerHTML = '';
+    DoiTT.innerHTML += "<h3>Tạo cây gia phả</h3>";
    
     var form = document.createElement('form');
     form.action = 'home.php';
@@ -232,8 +244,17 @@ $(document).on('click', "#ThemCay", function () {
 
 function ListBaiCung(){
   DoiTT.innerHTML = "";
+  DoiTT.innerHTML += "<h3>Cúng bái</h3>";  
+  
+  var Huydi = document.createElement('input');
+    Huydi.setAttribute('type', 'button');
+    Huydi.value = 'Đóng';
+    Huydi.id = 'Cancel';
+    DoiTT.appendChild(Huydi);
+    Huydi.setAttribute('style', 'background: #69d2e7;border: 1px solid #ddd;color: #ffffff\n\
+;width: 60px; height: 30px;text-transform: uppercase;float:right;');
     
-  DoiTT.innerHTML='<iframe src="./Bai_cung.html" width = "800" height="800"/>';
+  DoiTT.innerHTML +='<iframe src="./Bai_cung1.html" width = "800" height="800"/>';
 }
 
 $(document).on('click', "#BaiCung", function () {

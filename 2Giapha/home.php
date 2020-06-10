@@ -50,152 +50,148 @@ if(!empty($_POST['logout'])){
 
 <html>
      <head>
-    <title>Trang chủ</title>
+    <title>Gia pha online</title>
+    <link href="PluginCSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="PluginCSS/material-design-iconic-font.min.css" rel="stylesheet" />
+    
     <style type="text/css">
-        *{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html{
-    height: 100%;
-}
+
 body{
-    font-family: 'Segoe UI', sans-serif;;
-    line-height: 1.6;
-    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
 }
+
 .wrap {
-    width: 100%;
-    height: 90%;
-    background-color: #006666;
+  padding-left: 250px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
+
 .left{
-    margin-top: 20px;
-    margin-left: 20px;
-    width: 20%;
-    font-size: 15px;
-    background-color: #fafafa;
-    float: left;
-    border: solid;
-    border-width: 0px;
-    border-radius: 8px 8px 8px 8px;
-}
-.thongtin{
-    margin: 0px;
-    width: 100%;
-    height: 80px;
-    text-align: center;
-    background-color: #33ffff;
-    font-family: 'Segoe UI', sans-serif;
-    border: solid;
-    border-width: 1px;
-    border-radius: 8px 8px 0px 0px;
-}
-.thongtin h3{
-    margin: 20px;
+     z-index: 1000;
+     position: fixed;
+     left: 250px;    
+     width: 250px;
+  height: 100%;
+  padding-top: 0;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #37474F;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
-.caygiapha{
-    padding: 0px;
-    width: 100%;
-    height: 80px;
-    text-align: center;
-    background-color: #33ffff;
-    font-family: 'Segoe UI', sans-serif;
-    border: solid;
-    border-width: 1px;
-    border-radius: 0px 0px 0px 0px;
-}
-.caygiapha h3{
-    margin: 20px;
+.left header{
+    background-color: #263238;
+  font-size: 20px;
+  line-height: 52px;
+  text-align: center;
 }
 
-.themcaygiapha{
-    padding: 0px;
-    width: 100%;
-    height: 80px;
-    text-align: center;
-    background-color: #33ffff;
-    font-family: 'Segoe UI', sans-serif;
-    border: solid;
-    border-width: 1px;
-    border-radius: 0px 0px 0px 0px;
+.left header a{
+    color: #fff;
+  display: block;
+  text-decoration: none;
 }
-.themcaygiapha h3{
-    margin: 20px;
+.left header a:hover {
+  color: #fff;
 }
 
-.dangxuat{
-    padding: 0px;
-    width: 100%;
-    height: 80px;
-    text-align: center;
-    background-color: #33ffff;
-    font-family: 'Segoe UI', sans-serif;
-    border: solid;
-    border-width: 1px;
-    border-radius: 0px 0px 8px 8px;
-}
-.dangxuat h3{
-    margin: 20px;
+.left .nav{
+  
 }
 
-.right{
-    margin-top: 20px;
-    margin-left: 20px;
-    width: 70%;
-    height: 80%;
-    background-color: #fafafa;
-    float: left;
-    border: solid;
-    border-width: 1px;
-    border-radius: 8px 8px 8px 8px;
+.left .nav a{
+  background: none;
+  border-bottom: 1px solid #455A64;
+  color: #CFD8DC;
+  font-size: 14px;
+  padding: 16px 24px;
 }
 
-.right .TaiKhoan{
-    margin-top: 20px;
-    margin-left: 20px; 
-    font-family: 'Segoe UI', sans-serif;
+.left .nav a:hover{
+  background: none;
+  color: #ECEFF1;
 }
+
+.left .nav a i{
+  margin-right: 16px;
+}
+
+.left .nav li{
+    cursor: pointer;
+}
+
+.right {
+  width: 100%;
+  position: relative;
+  margin-right: 0;
+}
+
 #DoiTT {
     margin-top: 20px;
-    margin-left: 10px;
-    max-height: 80%;
+    margin-left: 20px;
+    max-height: 85%;
     overflow-y: scroll;
 }
     </style>
     </head>
     <body>
-        <div style="top:0; width: 100%; height: 50px;">
-                <h1>Gia phả online</h1>
-            </div>
+     <!--   <div style="top:0; width: 100%; height: 50px;">
+            <p style="font-size: 30px;">Gia phả online</p>
+        </div> -->
         <div class="wrap">
             <div class="left">
-                <div class="thongtin" id="doiMK">
-                    <h3>Thay đổi thông tin tài khoản</h3>
-                </div>
-                <div class="caygiapha" id="danhsachcay">
-                    <h3>Danh sách cây gia phả</h3>
-                </div>
-                <div class="themcaygiapha" id="ThemCay">
-                    <h3>Tạo cây gia phả</h3>
-                </div>
-                <div class="themcaygiapha" id="BaiCung">
-                    <h3>Bài cúng</h3>
-                </div>
-                <div class="dangxuat" id="dangxuat">
-                    <h3>Đăng xuất</h3>
-                </div>
+                <header>
+                    <a>Trang chủ</a>
+                </header>
+                <ul class="nav">
+                    <li class="thongtin" id="doiMK">
+                        <a>
+                            <i></i> Thay đổi thông tin tài khoản
+                        </a>
+                    </li>
+                    <li class="caygiapha" id="danhsachcay">
+                        <a>
+                            <i></i> Danh sách cây gia phả
+                        </a>
+                    </li>
+                    <li class="themcaygiapha" id="ThemCay">
+                        <a>
+                            <i></i> Tạo cây gia phả
+                        </a>
+                    </li>
+                    <li class="themcaygiapha" id="BaiCung">
+                        <a>
+                            <i></i> Bài cúng
+                        </a>
+                    </li>
+                    <li class="dangxuat" id="dangxuat">
+                        <a>
+                            <i></i> Đăng xuất
+                        </a>
+                    </li>
+                </ul>    
             </div>
             <div class="right" id="right">
-                <div class="TaiKhoan">
-                    <h3>
-               <?php if(!empty($_SESSION['username'])){
-                echo 'Welcome to gia pha online '.$_SESSION['username'];}?>
-                    </h3>
-                </div>
-                
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a>
+                                <?php 
+                                if(!empty($_SESSION['username'])){
+                                echo $_SESSION['username'];
+                                }
+                                ?>
+                                </a></li>
+                        </ul>
+                    </div>
+                </nav>
                 <div id="DoiTT">
                     
                 </div>
@@ -203,7 +199,8 @@ body{
             
         </div>
       
-        <script src="./PluginJS/jquery.js"></script>
+    <!--    <script src="PluginCSS/bootstrap.min.js"></script> -->
+        <script src="PluginJS/jquery.js"></script>
         <script src="homee.js"></script>
     </body>
 </html>

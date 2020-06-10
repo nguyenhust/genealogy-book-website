@@ -20,129 +20,168 @@ if(!empty($_POST['tree_data'])){
 ?>
 <html>
     <title>Gia phả online</title>
+    <link href="PluginCSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="PluginCSS/material-design-iconic-font.min.css" rel="stylesheet" />
+    
     <style type="text/css">
         *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
-    height: 100%;
+        body{
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
 }
-body{
-    font-family: 'Segoe UI', sans-serif;;
-    line-height: 1.6;
-    height: 100%;
-}
+
 .wrap {
-    width: 100%;
-    height: 90%;
-    background-color: #006666;
+  padding-left: 250px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
+
 .left{
-    margin-top: 20px;
-    margin-left: 20px;
-    width: 20%;
-    font-size: 15px;
-    float: left;
-    border: solid;
-    border-width: 0px;
-    border-radius: 8px 8px 8px 8px;
+     z-index: 1000;
+     position: fixed;
+     left: 250px;    
+     width: 250px;
+  height: 100%;
+  padding-top: 0;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #37474F;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
-.Chitiet{
-    margin: 0px;
-    width: 100%;
-    height: 80px;
-    text-align: center;
-    background-color: #33ffff;
-    font-family: 'Segoe UI', sans-serif;
-    border: solid;
-    border-width: 1px;
-    border-radius: 8px 8px 0px 0px;
+
+.left header{
+    background-color: #263238;
+  font-size: 20px;
+  line-height: 52px;
+  text-align: center;
 }
-.Chitiet h3{
-    margin: 20px;
+
+.left header a{
+    color: #fff;
+  display: block;
+  text-decoration: none;
 }
-.Luu_cay{
-    margin: 0px;
-    width: 100%;
-    height: 80px;
-    text-align: center;
-    background-color: #33ffff;
-    font-family: 'Segoe UI', sans-serif;
-    border: solid;
-    border-width: 1px;
-    border-radius: 0px 0px 8px 8px;
+.left header a:hover {
+  color: #fff;
 }
-.Luu_cay h3{
-    margin: 20px;
+
+.left .nav{
+  
+}
+
+.left .nav a{
+  background: none;
+  border-bottom: 1px solid #455A64;
+  color: #CFD8DC;
+  font-size: 14px;
+  padding: 16px 24px;
+}
+
+.left .nav a:hover{
+  background: none;
+  color: #ECEFF1;
+}
+
+.left .nav a i{
+  margin-right: 16px;
+}
+
+.left .nav li{
+    cursor: pointer;
 }
 
 .nguoi{
     margin: 0px;
     width: 100%;
-    max-height: 320px;
+    max-height: 500px;
     background-color: #cccccc;
     font-family: 'Segoe UI', sans-serif;
-    border: solid;
-    border-width: 1px;
-    border-radius: 8px 8px 8px 8px;
-    
-    height: 400px;
 }
 
-.right{
-    margin-top: 20px;
-    margin-left: 20px;
-    width: 70%;
-    height: 90%;
-    background-color: #fafafa;
-    float: left;
-    border: solid;
-    border-width: 1px;
-    border-radius: 8px 8px 8px 8px;
+.right {
+  width: 100%;
+  position: relative;
+  margin-right: 0;
 }
-.right .TaiKhoan{
-    margin-top: 20px;
-    margin-left: 20px; 
-    font-family: 'Segoe UI', sans-serif;
-}
+
 #Bigchart {
     margin-top: 20px;
     margin-left: 30px;
     max-width: 100%;
-    max-height: 85%;
+    max-height: 75%;
     overflow: scroll;
 }
     </style>
     </head>
-    <body>
+    
         
-        <div style="top:0; width: 100%; height: 50px;">
+    <!--    <div style="top:0; width: 100%; height: 50px;">
                 <h1>Gia phả online</h1>
-            </div>
+            </div>-->
         <div class="wrap">
             <div class="left">
-                <div class="Chitiet" id="Chitiet">
-                    <h3>Chi tiết</h3>
-                </div>
-                <div class="Luu_cay" id="Luu_cay">
-                    <h3>Lưu</h3>
-                </div>
-                <div class="nguoi" id="nguoi">
-                    
-                </div>
+                <header>
+                    <a><?php if(!empty($_SESSION['username'])){
+                echo $_SESSION['Open_Cay'];}?>
+                    </a>
+                </header>
+                <ul class="nav">
+                    <li class="Chitiet" id="Chitiet">
+                        <a>
+                            <i></i> Chi tiết
+                        </a>
+                    </li>
+                    <li class="Luu_cay" id="Luu_cay">
+                        <a>
+                            <i></i> Lưu
+                        </a>
+                    </li>
+                    <li id="veHome">
+                        <a>
+                            <i></i> Quay lại
+                        </a>
+                    </li>
+                <div class="nguoi" id="nguoi"></div>
                
             </div>
             <div class="right" id="right">
-                <div class="TaiKhoan">
-                    <h3>
-               <?php if(!empty($_SESSION['username'])){
-                echo 'Family tree: '.$_SESSION['Open_Cay'];}?>
+                 <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a>
+                                <?php 
+                                if(!empty($_SESSION['username'])){
+                                echo $_SESSION['username'];
+                                }
+                                ?>
+                                </a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="TaiKhoan" id="TaiKh">
+                    <h3 id="familyHead" style="margin-left:20px;">
+                    <?php if(!empty($_SESSION['username'])){
+                echo $_SESSION['Open_Cay'];}?>
                     </h3>
-                    <input id="zoomIn" value="ZOOM IN" type="button" style="float: right; margin-right: 20px;">
-                    <input id="zoomOut" value="ZOOM OUT" type="button" style="float: right; margin-right: 20px;">
-                </div>
+                    <input id="zoomIn" value="ZOOM IN" type="button" style="background: #69d2e7;border: 1px solid #ddd
+                           ;color: #ffffff;width: 120px; height: 30px; margin-right: 20px;text-transform: uppercase;float:right;">
+                    <input id="zoomOut" value="ZOOM OUT" type="button" style="background: #69d2e7;border: 1px solid #ddd
+                           ;color: #ffffff;width: 120px; height: 30px; margin-right: 20px;text-transform: uppercase;float:right;">
+                <!--    <input id="ConvertImage" value="Convert to image" type="button" style="background: #69d2e7;border: 1px solid #ddd
+                           ;color: #ffffff;width: 180px; height: 30px; margin-right: 20px;text-transform: uppercase;float:right;">
+                    
+                    <a id="TaiVe" style="margin-left: 20px;" href="#">Save image</a> -->
+                </div></br>
                 
                 <div id="Bigchart">
                 <div id="chart">
@@ -152,8 +191,9 @@ body{
             </div>
             
         </div>
-        
+        <script src="./PluginJS/html2canvas.js"></script>
+        <script src="./PluginJS/canvas2image.js"></script>
         <script src="./PluginJS/jquery.js"></script>
         <script src="Family.js"></script>
-    </body>
+    
 </html>
