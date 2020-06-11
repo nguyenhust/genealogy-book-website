@@ -38,6 +38,21 @@ if(!empty($_POST['OpenCay'])){
     exit();
 }
 
+if(!empty($_POST['qluser'])){
+    GetListUser();
+    exit();
+}
+
+if(!empty($_POST['userXoa'])){
+    XoaUser();
+    exit();
+}
+
+if(!empty($_POST['userAdmin'])){
+    LamAdmin();
+    exit();
+}
+
 if(!empty($_POST['logout'])){
     session_destroy();
     echo 'Dang xuat thanh cong';
@@ -176,6 +191,20 @@ body{
                             <i></i> Đăng xuất
                         </a>
                     </li>
+                    
+                    <?php 
+                    if(!empty($_SESSION['user-level'])){
+                        if($_SESSION['user-level'] == 1){
+                            ?>
+                            <li id="qluser">
+                                <a>
+                                    <i></i> Quản lí user
+                                </a>
+                            </li>
+                    <?php    }
+                    }
+                    
+                    ?>
                 </ul>    
             </div>
             <div class="right" id="right">

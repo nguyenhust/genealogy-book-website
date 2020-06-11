@@ -177,10 +177,10 @@ if(!empty($_POST['tree_data'])){
                            ;color: #ffffff;width: 120px; height: 30px; margin-right: 20px;text-transform: uppercase;float:right;">
                     <input id="zoomOut" value="ZOOM OUT" type="button" style="background: #69d2e7;border: 1px solid #ddd
                            ;color: #ffffff;width: 120px; height: 30px; margin-right: 20px;text-transform: uppercase;float:right;">
-                <!--    <input id="ConvertImage" value="Convert to image" type="button" style="background: #69d2e7;border: 1px solid #ddd
-                           ;color: #ffffff;width: 180px; height: 30px; margin-right: 20px;text-transform: uppercase;float:right;">
+                    <input id="InRa" value="Print" type="button" style="background: #69d2e7;border: 1px solid #ddd
+                           ;color: #ffffff;width: 80px; height: 30px; margin-right: 20px;text-transform: uppercase;float:right;">
                     
-                    <a id="TaiVe" style="margin-left: 20px;" href="#">Save image</a> -->
+                <!--    <a id="TaiVe" style="margin-left: 20px;" href="#">Save image</a> -->
                 </div></br>
                 
                 <div id="Bigchart">

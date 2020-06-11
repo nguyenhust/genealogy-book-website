@@ -72,9 +72,9 @@ $('#danhsachcay').on('click', function() {
         data:{listcay:1},
         dataType:"JSON",
         success : function (result){
-            for (var i = 0; i < result.length; i++) {
+        /*    for (var i = 0; i < result.length; i++) {
                 console.log(result[i]);
-            }
+            }*/
             
             DanhsachCay(result);
         }
@@ -274,5 +274,105 @@ $('#dangxuat').on('click', function() {
     });
 });
 
+$('#qluser').on('click', function() {
+    
+    $.ajax({
+        url:"home.php",
+        method:"POST",
+        data:{qluser:1},
+        dataType:"JSON",
+        success : function (result){
+          //  console.log(result);
+            DanhsachUser(result);
+        }
+    });
+});
 
+function DanhsachUser(danhsach){
+    DoiTT.innerHTML = '';
+    DoiTT.innerHTML += "<h3>Danh sách user</h3>";
+    
+    var Huydi = document.createElement('input');
+    Huydi.setAttribute('type', 'button');
+    Huydi.value = 'Đóng';
+    Huydi.id = 'Cancel';
+    DoiTT.appendChild(Huydi);
+    Huydi.setAttribute('style', 'background: #69d2e7;border: 1px solid #ddd;color: #ffffff\n\
+;width: 60px; height: 30px;text-transform: uppercase;float:right;');
+    
+    for (var i = 0; i < danhsach.length; i++) {
+        var divv = document.createElement('div');
+        divv.name = danhsach[i][0];
+        divv.setAttribute('style', 'margin-top: 20px; width: 500px ;border: 1px solid #ddd; border-radius: 8px 8px 8px 8px;background: #ffffff;');
+        
+        var pp = document.createElement('h3');
+        pp.appendChild(document.createTextNode(danhsach[i][1]));
+        divv.appendChild(pp);
+        pp.setAttribute('style', 'margin-top: 10px; margin-left: 15px;');
+        
+        if(danhsach[i][3] == 1){
+            var pp2 = document.createElement('label');
+            pp2.appendChild(document.createTextNode("admin"));
+            divv.appendChild(pp2);
+            pp2.setAttribute('style', 'margin-top: 10px; margin-left: 15px;');
+            divv.innerHTML+='</br>';
+        } else{
+            var pp2 = document.createElement('label');
+            pp2.appendChild(document.createTextNode("user"));
+            divv.appendChild(pp2);
+            pp2.setAttribute('style', 'margin-top: 10px; margin-left: 15px;');
+            divv.innerHTML+='</br>';
+            
+            var butn = document.createElement('input');
+            butn.setAttribute('type', 'button');
+            butn.value = 'Cấp quyền admin';
+            butn.name = danhsach[i][0];
+            butn.id = 'ChoAdmin';
+            divv.appendChild(butn);
+            butn.setAttribute('style', 'background: #69d2e7;border: 1px solid #ddd;color: #ffffff;\n\
+margin-top: 5px; margin-left: 15px; margin-bottom: 10px;width: 40%; height: 30px;text-transform: uppercase;');
+            
+            var butn3 = document.createElement('input');
+        butn3.setAttribute('type', 'button');
+        butn3.value = 'Xoá';
+        butn3.name = danhsach[i][0];
+        butn3.id = 'XoaTK';
+        divv.appendChild(butn3);
+        butn3.setAttribute('style', 'background: #69d2e7;border: 1px solid #ddd;color: #ffffff;\n\
+margin-top: 5px; margin-left: 15px; margin-bottom: 10px;width: 10%; height: 30px;text-transform: uppercase;');
+        }
+        
+        DoiTT.appendChild(divv);
+    }
+}
+
+$(document).on('click', "#XoaTK", function () {
+    console.log($(this).attr('name'));
+    $.ajax({
+        url:"home.php",
+        method:"POST",
+        data:{userXoa: $(this).attr('name')},
+        dataType:"text",
+        success : function (result){
+            $('#qluser').click();
+            alert(result);
+        }
+    });
+
+});
+
+$(document).on('click', "#ChoAdmin", function () {
+    console.log($(this).attr('name'));
+    $.ajax({
+        url:"home.php",
+        method:"POST",
+        data:{userAdmin: $(this).attr('name')},
+        dataType:"text",
+        success : function (result){
+            $('#qluser').click();
+            alert(result);
+        }
+    });
+
+});
 

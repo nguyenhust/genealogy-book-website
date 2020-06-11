@@ -116,5 +116,59 @@ function MoCay(){
     $_SESSION['Open_Cay'] = $_POST['OpenCay'];
     echo 'OK';
 }
+
+function GetListUser(){
+    $conn = mysqli_connect('localhost', 'root', '', 'gia_pha') or die ('Loi ket noi');
+    mysqli_set_charset($conn, "utf8");
+    
+    $curr_id = $_SESSION['user-Id'];
+    
+    $queryy = "Select * from user where id != '$curr_id'";
+    $result = mysqli_query($conn, $queryy);
+    
+    $data = array();
+    if (mysqli_num_rows($result) > 0)
+    {
+       while ($row = mysqli_fetch_array($result)) {
+           $data[] = $row;
+       }
+    }
+    echo json_encode($data);
+ 
+}
+
+function XoaUser(){
+    $xoa_id = $_POST['userXoa'];
+    
+    $conn = mysqli_connect('localhost', 'root', '', 'gia_pha') or die ('Loi ket noi');
+    mysqli_set_charset($conn, "utf8");
+    
+    $queryy = "Delete from user where id = '$xoa_id'";
+    $queryy2 = "Delete from user_family where user_id = '$xoa_id'";
+          
+    if (mysqli_query($conn, $queryy) && mysqli_query($conn, $queryy2)){
+        echo 'Xoa thanh cong';
+    } else {
+        echo 'Co loi trong qua trinh xu ly';
+    }
+    
+}
+
+function LamAdmin(){
+    
+    $admin_id = $_POST['userAdmin'];
+    
+    $conn = mysqli_connect('localhost', 'root', '', 'gia_pha') or die ('Loi ket noi');
+    mysqli_set_charset($conn, "utf8");
+    
+    $sql = "Update user set level = '1' where id = '$admin_id'";
+          
+    if (mysqli_query($conn, $sql)){
+        echo 'Thay doi thanh cong';
+    } else{
+        echo 'Co loi';
+    }
+    
+}
 ?>
 

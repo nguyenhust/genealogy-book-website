@@ -441,7 +441,7 @@ function ShowRelation(chiso){
     if(human[chiso][5].length > 0){
         for (var i = 0; i < human[chiso][5].length; i++) {
             var vtt = human[chiso][5][i];
-            if(human[vtt] != null && human[vtt][3] != null && human[vtt][4] != null){
+            if(human[vtt] != null && (human[vtt][3] != null || human[vtt][4] != null)){
                 dacoR = 1;
                 break;
             }
@@ -1221,7 +1221,7 @@ display: inline-block;height: 100px; width: 90px;color:white;');
                     if(list[vt][2] == 1 && list[vt][5].length > 0){
                         for (var j = 0; j < list[vt][5].length; j++) {
                             var vtt = list[vt][5][j];
-                                console.log(vtt);
+                            //    console.log(vtt);
                             if(list[vtt][3] == null && list[vtt][4] == null){
                                 var licon = document.getElementById(vtt);
                                 if(licon != null){
@@ -1395,24 +1395,17 @@ $('#zoomIn').on('click', function(){
     }
 });
 
-function DoCapture(){
-    var elm = $('#Bigchart').get(0);
- 
-    var tenCC = document.getElementById("familyHead").textContent;
-    tenCC = tenCC.replace(/\s/g, '');
-    var filename = tenCC+ ".png";
-    
-    html2canvas(elm).then(function (canvas){
-        var canWidth = canvas.width;
-        var canHeight = canvas.height;
-        
-        Canvas2Image.saveAsPNG(canvas);
-    }); 
-};
-
-$('#ConvertImage').on('click', function(){
-    DoCapture(); 
+$('#InRa').on('click', function(){
+    PrintPage();
 });
+
+function PrintPage(){
+    var printContent = document.getElementById('Bigchart').innerHTML;
+    
+    document.body.innerHTML = printContent;
+    window.print();
+    location.reload();
+}
   
 
 

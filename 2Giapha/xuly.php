@@ -59,6 +59,7 @@ function XulyDangnhap(){
         
        $_SESSION['username'] = $row['name'];
        $_SESSION['user-Id'] = $row['id'];
+       $_SESSION['user-level'] = $row['level'];
         echo '<script language="javascript">alert("Dang nhap thanh cong"); '
          . 'window.location="home.php";</script>';
     }
@@ -106,6 +107,7 @@ function XulyDoiMatKhau(){
         $sql = "Update user set name = '$username', password = '$password' where name = '$curr_ten'";
           
         if (mysqli_query($conn, $sql)){
+            session_destroy();
             echo '<script language="javascript">alert("Thay doi thanh cong"); '
             . 'window.location="login.php";</script>';
         }
