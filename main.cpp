@@ -26,7 +26,7 @@ int main()
 		}
 	}
 	ifs.close();
-	/*
+	
 	// ghi ra file nhi phan
 	ofstream ofs("matrix_binary.dat", ios::out| ios::binary );
 	if(!ofs) {
@@ -67,25 +67,7 @@ int main()
 			}
 		}
 	}
-	// ghi ra 1 file text khac
-	ofstream ff("matrix_text.txt", ios::out );
-	if(!ff) {
-      cout << "Khong the mo file.\n" << endl;
-      return 1;
-   }
-  	else{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			//ofs << a[i][j];
-			//ofs << " ";
-			cout << a[i][j]; 
-			cout << "\n";
-		}
-	}
-	}
-	ff.close();
+	
 	// ghi ra man hinh
 	for (int i = 0; i < n; i++)
 	{
